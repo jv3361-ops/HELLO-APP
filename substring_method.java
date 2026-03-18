@@ -1,22 +1,22 @@
-public class substring_method {
+public class  {
     public static void main(String[] args) {
 
-        // If no arguments → default message
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            String result = "";
+            StringBuilder nameBuilder = new StringBuilder();
 
-            // Build string with delimiter
             for (String name : args) {
-                result += name + ", ";
+                nameBuilder.append(name).append(", ");
             }
 
-            // Remove trailing ", " using substring
-            result = result.substring(0, result.length() - 2);
+            if (nameBuilder.length() > 0) {
+                nameBuilder = new StringBuilder(
+                        nameBuilder.substring(0, nameBuilder.length() - 2)
+                );
+            }
 
-            // Print final greeting
-            System.out.println("Hello, " + result + "!");
+            System.out.println("Hello, " + nameBuilder + "!");
         }
     }
 }
